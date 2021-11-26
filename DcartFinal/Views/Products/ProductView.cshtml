@@ -1,0 +1,22 @@
+﻿@model IEnumerable<DcartFinal.Models.Product>
+<head>
+    <title>
+
+    </title>
+
+</head>
+@{ ViewData["Title"] = "ProductView"; }
+<div class="text-center">
+    @foreach (var item in Model)
+    {
+    <div>
+        <a asp-action="" asp-route-id="">@item.Model</a>
+        @item.Price
+        
+       
+        <hr />
+    </div>
+       
+    }
+
+</div>
