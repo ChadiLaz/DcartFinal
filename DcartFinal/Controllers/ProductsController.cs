@@ -65,6 +65,7 @@ namespace DcartFinal.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ProductId,Model,SKU,UPC,EAN,JAN,ISBN,MPN,Location,Quantity,StockStatusId,Title,ImageFile,ManufacturerId,Shipping,Price,Points,TaxClassId,DateAvailable,Weight,WeightClassId,Length,Width,Height,LengthClassId,Subtract,Minimum,SortOrder,Status,Viewed,DateAdded,DateModified")] Product product)
         {
+            
             if (ModelState.IsValid)
             {
                 string wwwRootPath = _hostEnvironment.WebRootPath;

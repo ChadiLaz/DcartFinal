@@ -6,17 +6,30 @@
 
 </head>
 @{ ViewData["Title"] = "ProductView"; }
-<div class="text-center">
-    @foreach (var item in Model)
-    {
-    <div>
-        <a asp-action="" asp-route-id="">@item.Model</a>
-        @item.Price
-        
-       
-        <hr />
-    </div>
-       
-    }
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="~/Image/@item.MainImageURL" class="img-thumbnail" />
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            @item.Model
+                        <h2 class="card-footer">price: @item.Price</h2>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a asp-route="ItemDetails" asp-route-id="@item.ProductId">
 
+                                </a>
+                            </div>
+                        </div>
+
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+    }
+    </div>
 </div>
