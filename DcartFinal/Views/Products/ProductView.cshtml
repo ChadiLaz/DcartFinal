@@ -16,14 +16,15 @@
                     <div class="card-body">
                         <h3 class="card-title">
                             @item.Model
-                        <h2 class="card-footer">price: @item.Price</h2>
+                        <p class="card-footer">price: @item.Price</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a asp-route="ItemDetails" asp-route-id="@item.ProductId">
+                                <a>Add to cart:</a>
+                                <a asp-route="" asp-route-id="">  @item.ProductId
 
                                 </a>
                             </div>
-                        </div>
+                            </div>
 
                     </h3>
                 </div>
