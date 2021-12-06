@@ -27,6 +27,13 @@ namespace DcartFinal.Controllers
         {
             return View(await _context.Images.ToListAsync());
         }
+        public ActionResult ProductDescrition()
+        {
+            List<Product> ProductList = _context.Products.ToList();
+
+            return View(ProductList);
+        }
+       
         public ActionResult ProductView()
         {
 
@@ -169,5 +176,54 @@ namespace DcartFinal.Controllers
         {
             return _context.Images.Any(e => e.ProductId == id);
         }
+
+        //public ActionResult AddToCart(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var ItemToBuy = _context.Products
+        //       .Include(a => a.ProductId)
+        //       .Include(m => m.Price)
+        //       .SingleOrDefault(m => m.ProductId == id);
+
+           
+
+
+        //    if (ItemToBuy == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return RedirectToAction("AddedToCart", new { id });
+
+        //}
+        //public ActionResult AddedToCart(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var SelectedItem = _context.Products
+        //   .Include(a => a.ProductId)
+        //   .Include(m => m.Price)
+        //   .SingleOrDefault(m => m.ProductId == id);
+
+          
+
+        //    ViewData["ProductId"] = SelectedItem.ProductId;
+
+        //    ViewData["ItemPrice"] = SelectedItem.Price;
+
+        //    if (SelectedItem == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(SelectedItem);
+        //}
     }
 }

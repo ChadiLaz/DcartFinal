@@ -24,8 +24,8 @@ namespace DcartFinal.Models
 
         
         public string Title { get; set; }
+        public string Description { get; set; }
 
-       
         [DisplayName("Upload Image Name")]
         public string MainImageURL { get; set; }
 

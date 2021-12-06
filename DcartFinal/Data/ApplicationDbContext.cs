@@ -46,6 +46,7 @@ namespace DcartFinal.Data
             });
 
         }
+        public DbSet<Product>   ProductDescritpion { get; set; }
         public DbSet<Product> Images { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<AttributeItem> Attributes { get; set; }
@@ -154,7 +155,7 @@ namespace DcartFinal.Data
         public DbSet<ReturnStatus> ReturnStatus { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<SeoUrl> SeoUrls { get; set; }
-        public DbSet<Session> Sessions { get; set; }
+        public DbSet<Session1> Sessions { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<ShippingCourier> ShippingCouriers { get; set; }
         public DbSet<Statistic> Statistics { get; set; }

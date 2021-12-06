@@ -4,14 +4,16 @@ using DcartFinal.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DcartFinal.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211130150934_DescriptionAddedToProduct")]
+    partial class DescriptionAddedToProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -209,9 +211,6 @@ namespace DcartFinal.Data.Migrations
                     b.Property<DateTime>("DateAdded")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("MainImageURL")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Option")
                         .HasColumnType("nvarchar(max)");
 
@@ -226,12 +225,6 @@ namespace DcartFinal.Data.Migrations
 
                     b.Property<string>("SessionId")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Total")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("UnitPrice")
-                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("CartId");
 
@@ -3171,7 +3164,7 @@ namespace DcartFinal.Data.Migrations
                     b.ToTable("SeoUrls");
                 });
 
-            modelBuilder.Entity("DcartFinal.Models.Session1", b =>
+            modelBuilder.Entity("DcartFinal.Models.Session", b =>
                 {
                     b.Property<string>("SessionId")
                         .HasColumnType("nvarchar(450)");

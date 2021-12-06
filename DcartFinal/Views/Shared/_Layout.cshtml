@@ -30,10 +30,33 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="ProductView">Products</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Carts" asp-action="ShoppingCart">Cart2</a>
+                        </li>
                     </ul>
+
                     <partial name="_LoginPartial" />
                 </div>
+                <div>
+                    @Html.Partial("_ShoppingCart")
+                </div>
+              
             </div>
+            @*<div class="col-md-6 col-sm-6 col-xs-6">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Cart(3) <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">EN</a></li>
+                            <li><a href="#">ID</a></li>
+                            <li><a href="#">FR</a> </li>
+                            <li class="divider"></li>
+                            <li><a href="#">IT</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>*@
         </nav>
     </header>
     <div class="container">

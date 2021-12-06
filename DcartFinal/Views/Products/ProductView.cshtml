@@ -6,29 +6,69 @@
 
 </head>
 @{ ViewData["Title"] = "ProductView"; }
+
+@*<script type="text/javascript">
+    function AddToCart(item) {
+        var itemId = $(item).attr("itemid");
+        var formData = new FormData();
+        formData.append("ProductId", itemId);
+        $.ajax({
+            async: true,
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            data: formData,
+            url: '/Products/ProductView',
+            success: function (data) {
+                if (data.success) {
+                    $("#cartItem").text("Cart(" + data.Counter + ")");
+                }
+
+            },
+            error: function () {
+                alert("theres a problem")
+            }
+        })
+    }
+</script>*@
+
 <div class="container">
     <div class="row">
         @foreach (var item in Model)
         {
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
-                    <img src="~/Image/@item.MainImageURL" class="img-thumbnail" />
+                   
+                    <li class="nav-item">
+                        <div class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="ProductView"> <img src="~/Image/@item.MainImageURL" class="img-thumbnail /></div>
+                    </li>
                     <div class="card-body">
                         <h3 class="card-title">
                             @item.Model
-                        <p class="card-footer">price: @item.Price</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <a>Add to cart:</a>
-                                <a asp-route="" asp-route-id="">  @item.ProductId
+                            <p class="card-footer">price: @item.Price</p>
+                            <div class="d-flex justify-content-between align-items-center">
 
-                                </a>
-                            </div>
-                            </div>
 
-                    </h3>
+                            </div>
+                            @if (item.Quantity > 0)
+
+                            {@using (Html.BeginForm("AddToCart"))
+                                {
+                                    @*<input type="submit" value="AddToCart" />*@
+                                    <input type="button" name="AddToCart" value="AddToCart" class="btn btn-primary" itemid="@item.ProductId" id="btnAddToCart" onclick="AddToCart(this)" />
+                                }
+
+
+
+                        }
+                            @if (item.Quantity == 0)
+                            {
+                                <a> Out of stock</a>
+                            }
+
+                        </h3>
+                    </div>
                 </div>
-            </div>
         </div>
 
     }

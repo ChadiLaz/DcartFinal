@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DcartFinal.Models
 {
-    public class Session
+    public class Session1
     {
         [Key]
         public string SessionId { get; set; }
